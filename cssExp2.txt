@@ -1,0 +1,41 @@
+CREATE TABLE usertable(
+username VARCHAR(10) PRIMARY KEY,
+userpassword VARCHAR(10)
+);
+
+SELECT * FROM usertable;
+
+INSERT INTO usertable (username, userpassword) VALUES ('ajay','pass1');
+INSERT INTO usertable (username, userpassword) VALUES ('tom','pass2');
+INSERT INTO usertable (username, userpassword) VALUES ('john','pass3');
+INSERT INTO usertable (username, userpassword) VALUES ('mark','pass4');
+
+SELECT * FROM usertable WHERE username = 'username' OR 1 = 1
+
+SELECT * FROM usertable WHERE username = '' OR ' ' = ' '
+
+SELECT * FROM usertable WHERE 'a' = 'a';
+DROP TABLE usertable;
+
+DELETE FROM usertable WHERE 'a' = 'a';
+
+UPDATE usertable SET userpassword='hacked' WHERE username = 'tanya' OR 't'='t'; 
+SELECT * FROM usertable;
+
+CREATE TABLE details(
+detID INTEGER primary key,
+name VARCHAR2(25),
+age INTEGER,
+dob date);
+
+INSERT INTO details VALUES(1,'name1',24,'11-MAY-11');
+INSERT INTO details VALUES(2,'name2',20,'11-MAY-98');
+INSERT INTO details(detID,name,dob) VALUES(3,'name3','14-MAY-96');
+INSERT INTO details(detID,name,age) VALUES(4,'name4',24);
+
+SELECT * FROM details;
+
+SELECT name,age FROM details WHERE dob='11-JUNE-95' or SYSDATE=SYSDATE ;
+
+UPDATE details SET dob=SYSDATE  WHERE name = 'h' OR 't'='t'; 
+SELECT * FROM details;
